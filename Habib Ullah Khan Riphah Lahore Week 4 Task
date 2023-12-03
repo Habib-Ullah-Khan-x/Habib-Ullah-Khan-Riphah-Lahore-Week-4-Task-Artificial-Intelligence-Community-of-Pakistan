@@ -1,0 +1,75 @@
+#include <iostream>
+using namespace std;
+
+class Hexagon {
+	private:
+		double side;
+
+	public:
+		Hexagon(double s) {
+			side=s;
+		}
+
+		double calcArea() {
+			return 1.5 * 1.732 * side;
+		}
+
+		double calcPeri() {
+			return 6 * side;
+		}
+
+		double calcAngleSum() {
+			return 6 * 120;
+		}
+
+		void display() {
+			cout << "Area of Hexagon is: " << calcArea() << endl;
+			cout << "Perimeter of Hexagon is: " << calcPeri() << endl;
+			cout << "Sum of Angles of Hexagon is: " << calcAngleSum() << endl;
+		}
+};
+
+class Square {
+	private:
+		double side;
+
+	public:
+		Square(double s) {
+			side=s;
+		}
+		double calcAreaSquare() {
+			return side * side;
+		}
+
+		double calcPeriSquare() {
+			return 4 * side;
+		}
+
+		void display() {
+			cout << "Area of Square is: " << calcAreaSquare() << endl;
+			cout << "Perimeter of Square is: " << calcPeriSquare() << endl;
+		}
+};
+
+int main() {
+	double s = 3;
+
+	cout << "Enter 1 to calculate area, perimeter, and sum of all angles of hexagon:" << endl;
+	cout << "Enter 2 to calculate area and perimeter of square:" << endl;
+	cout << "Enter any other key to exit:" << endl;
+
+	char x;
+	cin >> x;
+
+	if (x == '1') {
+		Hexagon hex(s);
+		hex.display();
+	} else if (x == '2') {
+		Square square(s);
+		square.display();
+	} else {
+		cout << "Exiting program." << endl;
+	}
+
+	return 0;
+}
